@@ -50,3 +50,9 @@ task registration_test(type: Test) {
         includeTags("registration")
     }
 }
+
+task text_box_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("text_box")
+    }
+}
