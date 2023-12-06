@@ -1,10 +1,17 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
+import pages.components.TableComponent;
+import pages.components.UserFormComponent;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage extends PageBase {
+
+    CalendarComponent calendarComponent = new CalendarComponent();
+    TableComponent tableComponent = new TableComponent();
 
     SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),

@@ -1,34 +1,39 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
+import pages.TextBoxPage;
 
 public class RegistrationTests extends TestBase {
 
+    RegistrationPage registrationPage = new RegistrationPage();
+    TestData data = new TestData();
+
     @Test
     void fillFormTest() {
-        registrationPage.openPage(urlRegistrationPage)
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setNumber(number)
-                .setDateOfBirth(day_of_birth, month_of_birth, year_of_birth)
-                .setSubject(subject)
-                .setHobby(hobby)
-                .uploadImage(fileUrl)
-                .setAddress(address)
-                .setState(state)
-                .setCity(city)
+        registrationPage.openPage(data.urlRegistrationPage)
+                .setFirstName(data.firstName)
+                .setLastName(data.lastName)
+                .setEmail(data.email)
+                .setGender(data.gender)
+                .setNumber(data.number)
+                .setDateOfBirth(data.day_of_birth, data.month_of_birth, data.year_of_birth)
+                .setSubject(data.subject)
+                .setHobby(data.hobby)
+                .uploadImage(data.fileUrl)
+                .setAddress(data.address)
+                .setState(data.state)
+                .setCity(data.city)
                 .clickSubmitButton()
-                .verifyResult("Student Name", firstName + " " + lastName)
-                .verifyResult("Student Email", email)
-                .verifyResult("Gender", gender)
-                .verifyResult("Mobile", number)
-                .verifyResult("Date of Birth", day_of_birth + " " + month_of_birth + "," + year_of_birth)
-                .verifyResult("Subjects", subject)
-                .verifyResult("Hobbies", hobby)
-                .verifyResult("Picture", fileUrl)
-                .verifyResult("Address", address)
-                .verifyResult("State and City", state + " " + city);
+                .verifyResult("Student Name", data.firstName + " " + data.lastName)
+                .verifyResult("Student Email", data.email)
+                .verifyResult("Gender", data.gender)
+                .verifyResult("Mobile", data.number)
+                .verifyResult("Date of Birth", data.day_of_birth + " " + data.month_of_birth + "," + data.year_of_birth)
+                .verifyResult("Subjects", data.subject)
+                .verifyResult("Hobbies", data.hobby)
+                .verifyResult("Picture", data.fileUrl)
+                .verifyResult("Address", data.address)
+                .verifyResult("State and City", data.state + " " + data.city);
     }
 }

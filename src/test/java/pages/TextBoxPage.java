@@ -1,9 +1,13 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.UserFormComponent;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxPage extends PageBase {
+
+    UserFormComponent userFormComponent = new UserFormComponent();
 
     SelenideElement nameInput = $("#userName"),
             emailInput = $("#userEmail"),
