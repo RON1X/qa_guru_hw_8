@@ -7,5 +7,4 @@ public abstract class PageBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
     }
-
 }
